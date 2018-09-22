@@ -1,4 +1,4 @@
-var topics = ["Mission Impossible: Fallout", "The Last Samurai", "Infinity War", "Black Panther", "Pitch Perfect", "The Dark Knight", "The Avengers", "Crazy Rich Asians"];
+var topics = ["Fallout", "The Last Samurai", "The Avengers: Infinity War", "Black Panther", "Pitch Perfect", "The Dark Knight", "The Avengers", "Crazy Rich Asians"];
 
 function createButtons() {
     $("#gifbuttons").empty();
@@ -18,7 +18,7 @@ function createButtons() {
         $(".gifs").empty();
         var Movie = $(this).attr("data-name").trim();
         //console.log(thisShow);
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=movie+" + Movie + "&api_key=uuSts4J6O7rJNeTu7Xr6TGNK7FPxa7P7&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=movie+" + Movie + "&api_key=uuSts4J6O7rJNeTu7Xr6TGNK7FPxa7P7&limit=10";
 
         $.ajax({
             url: queryURL,
@@ -53,15 +53,16 @@ function createButtons() {
                 })
 
             })
-    })  
+    }) 
         $("#addTv").on("click", function () {
-            event.preventDefault();
+            event.preventDefault(); //problem creates additional empy buttons and button is not disabled when field is empty
             var newshow = $("#newinput").val().trim().toLowerCase();
-            //console.log(newshow);
+            console.log(newshow);
             topics.push(newshow);
             $("#newinput").val("");
             console.log(topics);
             createButtons();
         })
+    
 }
 createButtons();
