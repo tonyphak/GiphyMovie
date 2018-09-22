@@ -1,0 +1,23 @@
+.tvBtn{
+    margin: 3px;
+    padding: 6px;
+}
+
+img{
+    width: 250px;
+    height: 200px;
+}
+
+.gifys{
+   display: inline-block;
+   margin: 5px;
+   text-align: center;
+}
+
+#tvinput{
+    margin: 10px;
+}
+
+button, .giphys:hover{
+    cursor: pointer;
+}
